@@ -1,0 +1,39 @@
+
+h1,h2,h3, .subtitle {
+  font-family: "din145_14h_08.87regular";
+  font-weight: normal;
+}
+
+.title {
+  font-size: 3rem;
+}
+.subtitle {
+  font-size: 1.5rem;
+}
+
+body {
+  font-family: sans-serif;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  width: 35rem;
+}
+p, td {
+  line-height: 150%;
+}
+
+footer {
+  font-size: small;
+}
+.spec_table {
+  margin-left: 1rem;
+  border-collapse: collapse;
+}
+.spec_table td {
+  border: 1px;
+  border-style: solid;
+  vertical-align: top;
+  padding: 0.3rem;
+}
+.td_name {
+  width: 25%;
+}
