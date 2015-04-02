@@ -1,122 +1,193 @@
 <html>
+
 <head>
   <title>^^dkl</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="assets/fonts/web/stylesheet.css">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
+
 <body>
+
   <h1 class="title">^^dkl<span class="subtitle">(pronounced kœlʃ ˈdɛkl)</span></h1>
   <h1>Introduction</h1>
-  <p>^^dkl is an Open Source hardware project that is being developed in cooperation between the City of Cologne and Press Any Key UG.  The platform is intended to bridge the gap between devices similar to Arduino, which allow physical access to sensors via electronic protocols and device like Raspberry Pi that allow comfortable programming and access to higher level facilities like Ethernet, USB and Bluetooth at the cost of system complexity.</p>
-<p>The system is intended to be used with applications that require immediate interaction with the physical world, but need to interact with the Internet or user devices. Furthermore, technical expertise required to customise and operate the platform should be reduced to a minimum.</p>
-<p>Such systems could range from citizen participation platforms such as intended by the city of Cologne, smart outdoor multiplayer games that players can interact with using their smartphone, but also more classical embedded applications such as providing web based access to machines in production facilities.</p>
-  <img src="assets/img/dkl_256.jpg">
-  <img src="assets/img/dkl_back_256.jpg">
+
+    <p>^^dkl is an Open Source hardware project that is being developed in
+    cooperation between the City of Cologne and Press Any Key UG.  The
+    platform is intended to bridge the gap between devices similar to
+    Arduino, which allow physical access to sensors via electronic
+    protocols and device like Raspberry Pi that allow comfortable
+    programming and access to higher level facilities like Ethernet, USB
+    and Bluetooth at the cost of system complexity.</p>
+
+    <p>The system is intended to be used with applications that require
+    immediate interaction with the physical world, but need to interact
+    with the Internet or user devices. Furthermore, technical expertise
+    required to customise and operate the platform should be reduced to a
+    minimum.</p>
+
+    <p>Such systems could range from citizen participation platforms such
+    as intended by the city of Cologne, smart outdoor multiplayer games
+    that players can interact with using their smartphone, but also more
+    classical embedded applications such as providing web based access to
+    machines in production facilities.</p>
+
+    <img src="assets/img/dkl_256.jpg">
+    <img src="assets/img/dkl_back_256.jpg">
 
   <h1>Hardware</h1>
-  <h2>Specs</h2>
-  <h3>Microcontroller</h3>
-  <p>
-  The microcontroller is a high end ARM Cortex M3 processor from NXP available in several variants depending on specific requirements. The microcontroller provides electronic protocols, such as i2c, SPI and UARTs, as well as 10-bit ADC and DAC capabilities. Furthermore SD communication is supported, and a full-size SD card slot is populated on the board. The controller allows high speed USB, and the board is fitted with two micro/USB sockets, one of which OTG and allows the board to function as a USB master device. This allows the device to be used as a peripheral as well as controlling USB peripherals connected to the device.
-  </p>
-  <table class="spec_table">
-    <tr>
-      <td class="td_name">NXP LPC1837</td>
-      <td>This chip is being used in a QFP-144 form factor and is available in a compatible dual core variant should more performance be necessary. (<a href="http://www.nxp.com/documents/user_manual/UM10430.pdf">user manual</a>)</td>
-    </tr>
-    <tr>
-      <td>Clock</td>
-      <td>180 MHz</td>
-    </tr>
-    <tr>
-      <td>RAM</td>
-      <td>136kB SRAM</td>
-    </tr>
-    <tr>
-      <td>Nonvolatile Memory</td>
-      <td>1024kB flash, 16 kB on-chip EEPROM</td>
-    </tr>
-    <tr>
-      <td>Peripherals</td>
-      <td>SPI/SSP, I2C, U(S)ART, CAN, most IO pins are available as solderable connector points on the board in 2.54mm pitch.</td>
-    </tr>
-    <tr>
-      <td>DAC - ADC</td>
-      <td>one 10bit DAC,  two 10-bit ADC supporting up to 8 analog channels. 400kSamples/s</td>
-    </tr>
-    <tr>
-      <td>USB</td>
-      <td>two interfaces with DMA support. Host/Device/OTG and High Speed possible. Both interfaces populated with microusb connectors</td>
-    </tr>
-    <tr>
-      <td>SB - MMC</td>
-      <td>SD/MMC communication supported, board features</td>
-    </tr>
-  <table>
+    <h2>Specs</h2>
+    <h3>Microcontroller</h3>
 
-  <h3>Power Management</h3>
-  <p>
-The power management features allow the device to be operated either via battery or power supply. Charging facilities for lithium batteries are provided on the board. Furthermore the power management facilities feature voltage conversion allowing immediate interoperation with 5V devices (such as Arduino) with no need for additional level shifting circuitry. Finally, the power management system is capable of providing electricity to externally connect USB-OTG devices and powering external 5V components up to 5W from battery. Power to on board components can be individually switched for energy efficient operation.
-  
-  </p>
-  <table class="spec_table">
-    <tr>
-      <td class="td_name">Power Sources</td>
-      <td>Power supply via USB or dedicated plug, battery</td>
-    </tr>
-    <tr>
-      <td>Charging</td>
-      <td>Board features LTC4080 power managment IC with facilities for lithium battery charging (<a href="http://cds.linear.com/docs/en/datasheet/4080fb.pdf">datasheet</a>)</td>
-    </tr>
-    <tr>
-      <td>Voltage Boost</td>
-      <td>TPS2500 boost converter to allow hassle free operability with 5V devices (Arduino) as well as provide external USB-OTG devices with 5V voltage source. Integrated level shifters for selected IO pins  (<a href="http://www.ti.com/general/docs/lit/getliterature.tsp?baseLiteratureNumber=slvs886&fileType=pdf">datasheet</a>)</td>
-    </tr>
-    <tr>
-      <td>Switchable Peripherals</td>
-      <td>Power supply to all on board peripherals can be physically deactivated via firmware to reduce energy consumption.</td>
-    </tr>
-  </table>
+    <p> The microcontroller is a high end ARM Cortex M3 processor from
+    NXP available in several variants depending on specific
+    requirements. The microcontroller provides electronic protocols,
+    such as i2c, SPI and UARTs, as well as 10-bit ADC and DAC
+    capabilities. Furthermore SD communication is supported, and a
+    full-size SD card slot is populated on the board. The controller
+    allows high speed USB, and the board is fitted with two micro/USB
+    sockets, one of which OTG and allows the board to function as a USB
+    master device. This allows the device to be used as a peripheral as
+    well as controlling USB peripherals connected to the device.</p>
 
-  <h3>Network Connectivity</h3>
-  <p>
-The board features two internet devices: a dedicated 100 MBit PHY directly controlled by the microcontroller RJ45 ethernet jack as well as packaged WiFi module to allow wireless communication.
-  </p>
-  <table class="spec_table">
-    <tr>
-      <td class="td_name">Ethernet</td>
-      <td>10/100T with dedicated PHY and magjack RJ45 connector on board with firmware ethernet stack</td>
-    </tr>
-    <tr>
-      <td class="td_name">WiFi</td>
-      <td>TI CC3000 based Wifi, Antenna. IEEE 802.11 b/g, embedded ethernet stack. (<a href="http://www.ti.com/lit/ds/symlink/cc3000.pdf">datasheet</a>)</td>
-    </tr>
-  </table>
+    <table class="spec_table">
+      <tr>
+        <td class="td_name">NXP LPC1837</td>
+        <td>This chip is being used in a QFP-144 form factor and is
+        available in a compatible dual core variant should more
+        performance be necessary. (<a
+        href="http://www.nxp.com/documents/user_manual/UM10430.pdf">user
+        manual</a>)</td>
+      </tr>
+      <tr>
+        <td>Clock</td>
+        <td>180 MHz</td>
+      </tr>
+      <tr>
+        <td>RAM</td>
+        <td>136kB SRAM</td>
+      </tr>
+      <tr>
+        <td>Nonvolatile Memory</td>
+        <td>1024kB flash, 16 kB on-chip EEPROM</td>
+      </tr>
+      <tr>
+        <td>Peripherals</td>
+        <td>SPI/SSP, I2C, U(S)ART, CAN, most IO pins are available as solderable connector points on the board in 2.54mm pitch.</td>
+      </tr>
+      <tr>
+        <td>DAC - ADC</td>
+        <td>one 10bit DAC,  two 10-bit ADC supporting up to 8 analog channels. 400kSamples/s</td>
+      </tr>
+      <tr>
+        <td>USB</td>
+        <td>two interfaces with DMA support. Host/Device/OTG and High Speed possible. Both interfaces populated with microusb connectors</td>
+      </tr>
+      <tr>
+        <td>SB - MMC</td>
+        <td>SD/MMC communication supported, board features</td>
+      </tr>
+    <table>
 
-  <h3>Bluetooth LE</h3>
-  <p>
-  A Bluetooth 4.0 (LE) controller is available on the board along with antenna, allowing the device to provide both central and peripheral roles. This allows device interaction with, e.g. smartphone applications as well being able to communicate with Bluetooth peripherals with no further components.
-  </p>
-  <table class="spec_table">
-    <tr>
-      <td class="td_name">nrf51822</td>
-      <td>Nordic NRF51822 controller with radio, matched antenna. Firmware allows central and peripheral role of device. (<a href="http://www.nordicsemi.com/eng/content/download/13358/214991/file/nRF51822_PS%20v3.1.pdf">datasheet</a>)</td>
-    </tr>
-  </table>
+    <h3>Power Management</h3>
 
-  <h3>Sound Processor</h3>
-  <p>
-Last but not least the device features a dedicated sound controller with microphone and headphone driver as well as an integrated speaker amplifier.
-  </p>
-  <table class="spec_table">
-    <tr>
-      <td class="td_name">TLV320AIC3100</td>
-      <td>low-power, highly integrated, high-performance codec which provides a stereo audio DAC, a mono audio ADC, and a mono class-D 4-Ω speaker driver.  (<a href="http://www.ti.com/general/docs/lit/getliterature.tsp?baseLiteratureNumber=SLAS667&fileType=pdf">datasheet</a>)</td>
-    </tr>
-  </table>
+    <p> The power management features allow the device to be operated
+    either via battery or power supply. Charging facilities for lithium
+    batteries are provided on the board. Furthermore the power
+    management facilities feature voltage conversion allowing immediate
+    interoperation with 5V devices (such as Arduino) with no need for
+    additional level shifting circuitry. Finally, the power management
+    system is capable of providing electricity to externally connect
+    USB-OTG devices and powering external 5V components up to 5W from
+    battery. Power to on board components can be individually switched
+    for energy efficient operation.</p>
+
+    <table class="spec_table">
+      <tr>
+        <td class="td_name">Power Sources</td>
+        <td>Power supply via USB or dedicated plug, battery</td>
+      </tr>
+      <tr>
+        <td>Charging</td>
+        <td>Board features LTC4080 power managment IC with facilities
+        for lithium battery charging (<a
+        href="http://cds.linear.com/docs/en/datasheet/4080fb.pdf">datasheet</a>)</td>
+      </tr>
+      <tr>
+        <td>Voltage Boost</td>
+        <td>TPS2500 boost converter to allow hassle free operability
+        with 5V devices (Arduino) as well as provide external USB-OTG
+        devices with 5V voltage source. Integrated level shifters for
+        selected IO pins  (<a
+        href="http://www.ti.com/general/docs/lit/getliterature.tsp?baseLiteratureNumber=slvs886&fileType=pdf">datasheet</a>)</td>
+      </tr>
+      <tr>
+        <td>Switchable Peripherals</td>
+        <td>Power supply to all on board peripherals can be physically deactivated via firmware to reduce energy consumption.</td>
+      </tr>
+    </table>
+
+    <h3>Network Connectivity</h3>
+
+    <p> The board features two internet devices: a dedicated 100 MBit
+    PHY directly controlled by the microcontroller RJ45 ethernet jack as
+    well as packaged WiFi module to allow wireless communication.  </p>
+
+    <table class="spec_table">
+      <tr>
+        <td class="td_name">Ethernet</td>
+        <td>10/100T with dedicated PHY and magjack RJ45 connector on board with firmware ethernet stack</td>
+      </tr>
+      <tr>
+        <td class="td_name">WiFi</td>
+        <td>TI CC3000 based Wifi, Antenna. IEEE 802.11 b/g, embedded
+        ethernet stack. (<a
+        href="http://www.ti.com/lit/ds/symlink/cc3000.pdf">datasheet</a>)</td>
+
+      </tr>
+    </table>
+
+    <h3>Bluetooth LE</h3>
+
+    <p> A Bluetooth 4.0 (LE) controller is available on the board along
+    with antenna, allowing the device to provide both central and
+    peripheral roles. This allows device interaction with, e.g.
+    smartphone applications as well being able to communicate with
+    Bluetooth peripherals with no further components.  </p>
+    
+    <table class="spec_table">
+      <tr>
+        <td class="td_name">nrf51822</td>
+        <td>Nordic NRF51822 controller with radio, matched antenna.
+        Firmware allows central and peripheral role of device. (<a
+        href="http://www.nordicsemi.com/eng/content/download/13358/214991/file/nRF51822_PS%20v3.1.pdf">datasheet</a>)</td>
+      </tr>
+    </table>
+
+    <h3>Sound Processor</h3>
+
+    <p> Last but not least the device features a dedicated sound
+    controller with microphone and headphone driver as well as an
+    integrated speaker amplifier.  </p>
+
+    <table class="spec_table">
+      <tr>
+        <td class="td_name">TLV320AIC3100</td>
+        <td>low-power, highly integrated, high-performance codec which
+        provides a stereo audio DAC, a mono audio ADC, and a mono
+        class-D 4-Ω speaker driver.  (<a
+        href="http://www.ti.com/general/docs/lit/getliterature.tsp?baseLiteratureNumber=SLAS667&fileType=pdf">datasheet</a>)</td>
+      </tr>
+    </table>
 
   <h2>Repository</h2>
+    
+  <p>You can find the Eagle Source files for the schematics, board
+  layout and bill of materials in the <a
+  href="https://github.com/koelschdeckel/hardware">hardware</a> github
+  repository.</p>
+
+  <img src="assets/img/brd_256.jpg">
 
   <a href="bom.html"></a>
   <h2>Online Viewer</h2>
